@@ -5,6 +5,25 @@
     <title>Title</title>
 </head>
 <body>
-        <span th:text="${nome}"/>
+
+<p>
+    <a href="/cadastrar">Cadastrar</a>
+</p>
+        <table style="border: black; border-style: dashed; width: 100%;">
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Editar</th>
+                <th>Deletar</th>
+            </tr>
+            <tr th:each="p : ${produtosList}" th:object="${p}">
+                <td th:text="*{nome}"></td>
+                <td th:text="*{descricao}"> </td>
+                <td th:text="*{preco}"></td>
+                <td> <a th:href="@{'/editar/'+ *{id}}">Editar</a> </td>
+                <td> <a th:href="@{'/deletar/'+ *{id}}">Deletar</a></td>
+            </tr>
+        </table>
 </body>
 </html>
