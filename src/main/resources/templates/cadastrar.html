@@ -8,9 +8,15 @@
 <h1>Cadastrar Produtos</h1>
 <form method="post" th:action="@{/salvar}" th:object="${produto}">
     <input type="hidden" th:field="*{id}">
-    Nome: <input type="text" name="nome" th:field="*{nome}"> <br />
-    Descrição: <input type="text" name="descricao" th:field="*{descricao}"> <br />
-    Preço: <input type="text" name="preco" th:field="*{preco}"> <br />
+    Nome: <input type="text" name="nome" th:field="*{nome}">
+    <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
+    <br />
+    Descrição: <input type="text" name="descricao" th:field="*{descricao}">
+    <p th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" style="color: brown;"></p>
+    <br />
+    Preço: <input type="text" name="preco" th:field="*{preco}">
+    <p th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></p>
+    <br />
     <button type="submit">Enviar</button>
     <button type="reset">Limpar</button>
 </form>
