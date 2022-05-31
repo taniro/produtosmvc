@@ -37,5 +37,9 @@
         </p>
     </div>
 
+    <div th:fragment="displayName(name)">
+        <p th:text="${name} ?: 'ANONIMO'"></p>
+    </div>
+
 </body>
 </html>
