@@ -20,6 +20,11 @@ public class ProdutoController {
         this.service = service;
     }
 
+    @GetMapping("/login")
+    public String getLoginPage(){
+        return "login";
+    }
+
     @RequestMapping(value = {"/", "/produtos"})
     public String getHome(Model model){
 

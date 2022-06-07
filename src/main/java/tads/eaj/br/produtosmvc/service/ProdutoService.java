@@ -1,5 +1,8 @@
 package tads.eaj.br.produtosmvc.service;
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import tads.eaj.br.produtosmvc.model.Produto;
 import tads.eaj.br.produtosmvc.repository.ProdutoRepository;
@@ -8,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProdutoService {
+public class ProdutoService  {
 
     private ProdutoRepository repository;
 
@@ -41,4 +44,5 @@ public class ProdutoService {
     public List<Produto> findAll(){
         return repository.findAll();
     }
+
 }
